@@ -11,6 +11,36 @@
   </head>
 
   <body>
+    <header>
+      <h1>Ruby on Rails スケジュール管理アプリ</h1>
+    </header>
     <%= yield %>
+    <footer>
+      <p class="now">現在の日時 : </p>
+      <span id="view_today"></span>
+      <p class="total_count">スケジュール合計 :</p>
+      <span id="schedule_total"><%= Post.count %></span>
+
+      <script type="text/javascript">
+      document.getElementById("view_today").innerHTML = getToday();
+      
+      function getToday() {
+	      const today = new Date();
+	      const year = today.getFullYear();
+	      const month = today.getMonth()+1; //１を足すこと
+	      const day = today.getDate();
+	      const week = today.getDay(); //曜日(0～6=日～土)
+
+	      //曜日の選択肢
+	      const week_array = new Array("日","月","火","水","木","金","土");
+	      //出力用
+	      const s = year + "年" + month + "月" + day + "日 (" + week_array[week] + ")";
+	      return s;
+      }
+      </script>
+
+    </footer>
   </body>
+  
+
 </html>
