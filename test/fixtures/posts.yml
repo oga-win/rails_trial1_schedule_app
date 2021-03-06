@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  start_time: 
+  last_time: 
+  all_day: MyString
+
+two:
+  title: MyString
+  start_time: 
+  last_time: 
+  all_day: MyString
